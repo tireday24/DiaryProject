@@ -72,10 +72,20 @@
                                     <constraint firstAttribute="height" constant="5" id="uY8-oR-IN3"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nk4-pF-BCF">
+                                <rect key="frame" x="334" y="74" width="50" height="50"/>
+                                <color key="tintColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YG9-4g-kjM"/>
+                                    <constraint firstAttribute="width" constant="50" id="psS-8g-ogd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nk4-pF-BCF" secondAttribute="trailing" constant="30" id="7JW-ak-aOY"/>
+                            <constraint firstItem="nk4-pF-BCF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="NAh-Vc-xdl"/>
                             <constraint firstItem="7lA-sn-WHr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="RPp-O9-xjg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7lA-sn-WHr" secondAttribute="trailing" constant="30" id="Y52-lk-Nrk"/>
                             <constraint firstItem="NhA-I8-Z3A" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Zt2-7a-zML"/>
@@ -84,6 +94,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationImage" destination="nk4-pF-BCF" id="mlY-Fw-1Ub"/>
                         <outlet property="blackView" destination="NhA-I8-Z3A" id="itq-1c-NVl"/>
                         <outlet property="blackViewWidth" destination="X02-Za-n1P" id="pJS-0b-i1D"/>
                         <outlet property="tutorialLabel" destination="7lA-sn-WHr" id="eSi-zT-Jj3"/>
@@ -122,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXN-kV-eNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1631" y="114"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="3S8-3z-Bes">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="x4y-lY-Kbh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drZ-yy-g0u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="124"/>
         </scene>
     </scenes>
     <resources>

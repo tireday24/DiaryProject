@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SeSAC2UIFramework
 
 //뷰컨 여러개 묶음
 class WalkThroughViewController: UIPageViewController {

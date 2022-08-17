@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let vc = CodeSnapTwoViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+        
         //자주 사용하는 반복해서 사용하는 것들을 접근제어에 넣어서 사용하자
         //framework를 통해서 접근제어 활용
         

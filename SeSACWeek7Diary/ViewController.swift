@@ -7,43 +7,54 @@
 
 import UIKit
 import SeSAC2UIFramework
+import SnapKit
 
 class ViewController: UIViewController {
     
-    var name = "고래밥"
-    
-    private var age = 22
+    let nameButton: UIButton =  {
+        let view = UIButton()
+        view.setTitle("닉네임", for: .normal)
+        view.backgroundColor = .black
+        view.tintColor = .black
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
+        
+        nameButton.addTarget(self, action: #selector(nameButtonClicked), for: .touchUpInside)
+        
+        
+    }
+    
+    @objc func nameButtonClicked() {
+        let vc = ProfileViewController()
+        
+        //바로 중괄호? 클로져는 이름없는 함수기 때문에 프로퍼티에 넣을 수 있고 호출하려면 함수호출연산자 붙여줘야함
+        //실행은 안돼지만 함수 기능은 넣을 수 있다 실행은 안된다 실행은 함수호출될때 한다
+        //함수 기능은 여기서 실행
+        //값을 여기서 넘김
+        vc.saveButtonActionHandler = {
+            self.nameButton.setTitle(vc.nameTextField.text, for: .normal)
+        }
+        
+        present(vc, animated: true)
+        
+        //기능은 여기서
+    }
+
+    func configure() {
+        view.addSubview(nameButton)
+        
+        nameButton.snp.makeConstraints { make in
+            make.width.height.equalTo(200)
+            make.center.equalTo(view)
+        }
     }
 
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let vc = CodeSnapTwoViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-        
-        //자주 사용하는 반복해서 사용하는 것들을 접근제어에 넣어서 사용하자
-        //framework를 통해서 접근제어 활용
-        
-        testOpen()
-//        showSesacAlert(title: "테스트 얼럿", message: "테스트 메시지", buttonTitle: "변경") { _ in
-//            self.view.backgroundColor = .lightGray
-//        }
-        
-//        let image = UIImage(systemName: "star.fill")!
-//        let shareURL = "https://www.apple.com"
-//        let text = "WWDC What's New!!"
-//        sesacShowActivityViewController(shareImage: image, shareURL: shareURL, shareText: text)
-        
-        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
-        
-    }
 
 
 }

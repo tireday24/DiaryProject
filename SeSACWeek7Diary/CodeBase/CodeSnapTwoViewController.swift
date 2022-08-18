@@ -51,7 +51,7 @@ class CodeSnapTwoViewController: UIViewController {
         blackView.snp.makeConstraints { make in
             //offset 모든 엣지의 x축 y축 상관없이 50위 아래로 이동
             //addsubview의 추가 순서대로 나옴
-            make.edges.equalTo(redView).inset(50)//offset(50)
+            make.edges.equalTo(redView).offset(50)//offset(50)
             //left와 leading , right와 trailing 차이
             //글씨를 쓰는 방향이 차이에 따라 TextAlighment가 다름 left right는 무조건 왼쪽 오른쪽 Leading trailing은 국가에 맞게 알아서 처리해줌
         }
